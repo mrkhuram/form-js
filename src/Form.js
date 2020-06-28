@@ -4,7 +4,7 @@ import './style.css'
 class Header extends React.Component {
 
     state = {
-        form: false,
+        form: true,
         keysArray: [
             {
                 name: "Khuram",
@@ -44,7 +44,7 @@ class Header extends React.Component {
             })
         }
     }
-    generateRandomValue = e =>{
+    generateRandomValue = e => {
         e.preventDefault()
         let Obj = {
             name: this.state.name,
@@ -62,85 +62,93 @@ class Header extends React.Component {
     render() {
 
         return (
-            <>
-                <div >
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-4"></div>
+                    <div className="col-8">
 
-                    <div className="header" >
-                        <h3 className="api">Api Keys</h3>
+                        <div className="header" >
+                            <h3 className="api">Api Keys</h3>
 
-                        <button className="buttonAdjustment" onClick={() => { this.setState({ form: !this.state.form }) }}>+ Create API Key</button>
+                            <button className="buttonAdjustment" onClick={() => { this.setState({ form: !this.state.form }) }}>+ Create API Key</button>
 
-                    </div>
-
-                    <br />
-                    <div className="create">
-                        <div style={{ backgroundColor: "#eaeaea", width: '100%' }} >
-                            <h3 className="createApi"> Create API Keys</h3>
                         </div>
-                        <div class="shadow">
-                            {this.state.form ?
-                                <form>
-                                    <div>
-                                        <h6 className="name">Name</h6>
-                                        <br />
-                                        <input className="namefield" type="text" name="name" onChange={this.onChangeHandler} />
-                                    </div>
-                                    <div>
-                                        <h6 className="name">API KeyID</h6>
-                                        <br />
-                                        <input className="namefield" type="text" readOnly name="apiKeyId" value={this.state.apiKeyId} click={this.onChangeHandler} />
 
-                                        <button className="buttonAdjustment2" onClick={this.generateRandomValue} >Auto Customize</button>
-                                    </div>
-                                    <div>
-                                        <h6 className="name">API Key</h6>
-                                        <br />
-                                        <input className="namefield" readOnly type="text" name="apiKey" value={this.state.apiKey} onChange={this.onChangeHandler} />
 
-                                        <button className="buttonAdjustment2" onClick={this.generateRandomValue}>Auto Customize</button>
+                        <div className="create">
+                            <div className="outerCreateApi" >
+                                <h3 className="createApi"> Create API Keys</h3>
+                            </div>
+                            <div class="shadow">
+                                {this.state.form ?
+                                    <form>
+                                        <div>
+                                            <h6 className="name">Name</h6>
+                                            
+                                            <input className="namefield" type="text" name="name" onChange={this.onChangeHandler} />
+                                        </div>
+                                        <div>
+                                            <h6 className="name">API KeyID</h6>
+                                            
+                                            <input className="namefield readable" type="text" readOnly name="apiKeyId" value={this.state.apiKeyId} click={this.onChangeHandler} />
 
-                                    </div>
+                                            <button className="buttonAdjustment2" onClick={this.generateRandomValue} >Auto Customize</button>
+                                        </div>
+                                        <div>
+                                            <h6 className="name">API Key</h6>
+                                            
+                                            <input className="namefield readable" readOnly type="text" name="apiKey" value={this.state.apiKey} onChange={this.onChangeHandler} />
 
-                                    <div className="name">
+                                            <button className="buttonAdjustment2" onClick={this.generateRandomValue}>Auto Customize</button>
 
-                                        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onClick={this.clickToAdd}>Create</a>
+                                        </div>
 
-                                    </div>
+                                        <div className="name">
 
-                                </form>
+                                            <button className="createBtn" onClick={this.clickToAdd}>Create API</button>
 
-                                :
-                                null
-                            }
-                        </div>
-                        <div class="end">
-                            <table>
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>API Key</th>
-                                    <th>Action</th>
-                                </tr>
+                                        </div>
 
-                                {this.state.keysArray.map((item, key) => {
-                                    return <tr key={key}>
-                                        <td>{item.name}</td>
-                                        <td>{item.apiKey}</td>
-                                        <td><select>
-                                            <option>Select one</option>
-                                            <option>Select two</option>
-                                            <option>Select three</option>
+                                    </form>
+
+                                    :
+                                    null
+                                }
+                            </div>
+                            <div class="end">
+
+                                <th width="48%">First Name</th>
+                                <th width="46%">API Key</th>
+                                <th width="10%">Action</th>
+
+                                <table >
+
+
+                                    {this.state.keysArray.map((item, key) => {
+                                        return <tr key={key}>
+                                            <td width="50%" className="td-name">{item.name}
+                                            <p className="td-key-id">API Key ID: {item.apiKeyId}</p>
+                                            </td>
+                                            <td width="40%">{item.apiKey}</td>
+                                            <td width="30%">
+                                                <img src={require("./gear.png")} alt="" className="gear-img"/>
+                                                <select>
+                                               <option value=""></option>
+                                               <option value="">1</option>
                                             </select></td>
-                                    </tr>
-                                })}
+                                        </tr>
+                                    })}
 
 
-                            </table>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-            </>
+            </div>
         )
 
     }

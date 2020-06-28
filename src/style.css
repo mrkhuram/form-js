@@ -1,53 +1,59 @@
 .header{
-       /* margin-top: 100px; */
-       margin-left: 18%;
-       margin-right: 5%;
-       /* background-color: darkgoldenrod; */
+
        width: 100%;
        padding: 10px;
        height: 50px;
+       margin-bottom: 40px;
 }
-.api{
-    float: left;
-}
+
 .buttonAdjustment{
     position: absolute;
     right: 10px;
-    color: #9999ff;
+    top: 10px;
+    color: #0090ff;
     border-radius: 25px;
     border: none;
-    outline: none;
+    outline: none !important;
     font-weight: bold;
     background-color: #e6e6ff;
     height: 50px;
     width: 200px;
     margin-bottom: 10px;
 }
+.createBtn{
+    background-color: #0090ff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    outline: none !important;
+    padding: 10px 30px;
+    color: white;
+    
+}
 .shadow {
     height: 400px;
 }
 .create{
-    float: left;
-    margin-left: 18%;
     height: 430px;
-    width: 1050px;
-    background-color: #f5f5f5;
-    margin-top: 1%;
+    width: 100%;
+    background-color: white;
     box-shadow: 0px 0px 5px 5px lightgrey
     
 }
+.outerCreateApi{ 
+    background-color: #f9f9f9;
+    width: 100%;
+    color: #0090ff; 
+}
 .createApi{
-  color: #6666ff;
+  color: #d6e8f8;
   padding: 10px;
-  border-radius: 5px;
-  
-  
-
+  border-radius: 5px;  
 }
 .name{
     margin-left: 2%;
-     margin-top: 2%;
-     margin-bottom: -12px;
+    margin-top: 2%;
+    margin-bottom: 20px;
 }
 .namefield{
     margin-left: 2%;
@@ -55,26 +61,26 @@
     width: 400px;
     border-radius: 5px;
     border: 1px solid lightgrey;
+    outline: none;
+    padding: 10px;
+}
+.readable{
+    cursor: not-allowed;
 }
 .buttonAdjustment2{
-   margin-left: 2%;
-   
-color: #fffaf8;
+    margin-left: 2%;
+    color: #0090ff;
+    border-radius: 25px;
+    border: none;
+    outline: none !important;
+    background-color: #0090ff;
 
-border-radius: 25px;
-border: none;
-outline: none;
-/* font-weight: bold; */
-background-color:#0062cc;
-
-height: 30px;
-width: 170px;
+    height: 30px;
+    width: 170px;
 }
 .end{
-
     height: 300px;
-    width: 1050px;
-    
+    width: 100%;
     margin-top: 5%;
 }
 
@@ -83,19 +89,34 @@ width: 170px;
 table {
     border-collapse: collapse;
     width: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
   }
   
   th, td {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    height: 70px;
+    font-size: 18px;
+
   }
-  
-  tr:hover {background-color:#f5f5f5;}
+  .td-name{
+      font-weight: 600;
+  }
+  .td-key-id{
+      font-weight: 400;
+      font-size: 14px;
+      color: grey;
+  }
+
   select {
-      /* float: right; */
+    cursor: pointer;
       border: none;
       outline: none;
+  }
+  .gear-img{
+      height: 20px;
+      width: 20px;
   }
 
   tr:nth-last-child {
